@@ -1,0 +1,40 @@
+.env
+.env.*
+!.env.example
+!.env.local.example
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.next/
+dist/
+build/
+backend/data/
+.DS_Store
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+
+# Local databases and logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Python test/cache files
+.pytest_cache/
+.mypy_cache/
