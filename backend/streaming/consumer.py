@@ -24,7 +24,7 @@ def main():
     if artifact.get("features") != FEATURES:
         raise SystemExit("Saved model feature schema does not match the consumer schema.")
 
-    mongo = MongoClient(os.getenv("MONGODB_URI", "mongodb://localhost:27017"), serverSelectionTimeoutMS=5000)
+    mongo = MongoClient(os.environ["MONGODB_URI"], serverSelectionTimeoutMS=5000)
     mongo.admin.command("ping")
     collection = mongo["sentinelai"]["stream_transactions"]
     collection.create_index("event_id", unique=True)
