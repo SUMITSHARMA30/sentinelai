@@ -8,7 +8,7 @@ router = APIRouter(prefix="/stream", tags=["Kafka stream"])
 
 
 def get_collection():
-    client = MongoClient("mongodb://127.0.0.1:27017", serverSelectionTimeoutMS=3000)
+    client = MongoClient(os.environ["MONGODB_URI"], serverSelectionTimeoutMS=5000)
     try:
         client.admin.command("ping")
         return client, client["sentinelai"]["stream_transactions"]
